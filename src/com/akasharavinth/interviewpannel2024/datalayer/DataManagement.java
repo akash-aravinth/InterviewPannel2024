@@ -39,39 +39,25 @@ public class DataManagement {
     }
 
     //show All Interviewer and Canditates
-    public void showAllCanditates() {
-        for (Canditates c : canditatesList) {
-            showCanditates(c);
+
+    public void showCanditate(List<Canditates> canditatesList){
+        System.out.printf("%20s %20s %20s %20s","Canditate Id","Canditate Name ","Canditate EmailId","Canditate Score");
+        System.out.println();
+        for(Canditates c : canditatesList){
+            System.out.format("%20s %20s %20s %20s",c.getCanditateId(),c.getCanditateName(),c.getCanditateEmailId(),c.getCanditateScore());
+            System.out.println();
         }
     }
 
-    public void showAllInterviewer() {
-        for (Interviewer i : interviewerList) {
-            showInterviewer(i);
+    public void showInterviwerList(List<Interviewer> interviewerList){
+        System.out.printf("%10s %20s %20s %20s","Interviewer Id","Interviewer Name","Interviewer Available","Interviewr EmailId");
+        System.out.println();
+        for (Interviewer i : interviewerList ){
+            System.out.format("%10s %20s %20s %20s",i.getInterviewerId(),i.getInterviewerName(),i.isInterviewerAvailable(),i.getInterviewerEmailId());
+            System.out.println();
         }
     }
 
-    public void show(){
-
-    }
-
-    //show single canditate and interviewer
-    public void showCanditates(Canditates c) {
-        System.out.println("Canditate name : " + c.getCanditateName() + "\n" +
-                "Canditate Id : " + c.getCanditateId() + "\n" +
-                "Canditate PhoneNo : " + c.getCanditatePhoneNo() + "\n" +
-                "CanditateEmailId : " + c.getCanditateEmailId() + "\n" +
-                "CanditateAddrress : " + c.getCanditateAddress() + "" +
-                "\n" + "Canditate Score : " + c.getCanditateScore() + "\n" +
-                "CanditateInterViwer Name : " + c.getInterviewerName());
-    }
-
-    public void showInterviewer(Interviewer i) {
-        System.out.println("Interviewer Name : " + i.getInterviewerName() + " " +
-                "InterviewerPassword : " + i.getInterviewerEmailId() + " " + "\n " +
-                "Interviewer Available : " + i.isInterviewerAvailable() + " "
-        );
-    }
 
     //show allotted Canditaes List
     public void colideInterview(){
@@ -79,15 +65,8 @@ public class DataManagement {
             Canditates c = canditatesList.get(i);
             int temp = i%interviewerList.size();
             Interviewer interviewers = interviewerList.get(temp);
-            interviewers.setAllotedCanditates(c);
+            interviewers.setAllotedCanditates(c,interviewers);
         }
-        for (Interviewer c : interviewerList){
-            System.out.println("ji");
-            c.showAllotedCanditates();
-            c.getAllotedCanditates().size();
-        }
-        showAllCanditates();
-        showAllInterviewer();
     }
 
 }

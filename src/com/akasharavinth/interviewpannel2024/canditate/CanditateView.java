@@ -1,7 +1,9 @@
 package com.akasharavinth.interviewpannel2024.canditate;
 
 import com.akasharavinth.interviewpannel2024.interviewer.InterviewerView;
+import com.akasharavinth.interviewpannel2024.login.InterviewerLoginView;
 import com.akasharavinth.interviewpannel2024.login.LoginView;
+import com.akasharavinth.interviewpannel2024.makeinterview.AccessCanditates;
 
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public class CanditateView {
     public void gettingChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1.add Canditate \n 2.add Interviewer \n 3.Interviewer Login" +
-                "\n 4.Logout \n 5.Exit ");
+                "\n 4.Complete \n 5.Exit ");
         int choice = scanner.nextInt();
         switch (choice){
             case 1 :{
@@ -30,12 +32,13 @@ public class CanditateView {
                 break;
             }
             case 3 : {
-                LoginView loginView = new LoginView();
-                loginView.getLoginInfo();
+                InterviewerLoginView interviewerLoginView = new InterviewerLoginView();
+                interviewerLoginView.gettingLoginDetails();
                 break;
             }
             case 4 : {
-                System.out.println("Logout Succesfully");
+                AccessCanditates accessCanditates = new AccessCanditates();
+                accessCanditates.completeEvaluation();
                 break;
             }
             case 5 :{

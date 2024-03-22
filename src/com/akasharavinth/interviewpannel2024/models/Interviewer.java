@@ -68,25 +68,17 @@ public class Interviewer {
     public ArrayList<Canditates> getAllotedCanditates() {
         return allotedCanditates;
     }
-    public void setAllotedCanditates(Canditates c) {
+    public void setAllotedCanditates(Canditates c, Interviewer interviewers) {
+        c.setInterviewerName(interviewers.getInterviewerName());
         allotedCanditates.add(c);
     }
 
-    @Override
-    public String toString() {
-        return "Interviewer{" +
-                "dataManagement=" + dataManagement +
-                ", interviewerName='" + interviewerName + "\n" +
-                ", interviewerPassword='" + interviewerPassword + "\n" +
-                ", interviewerEmailId='" + interviewerEmailId + '\'' +
-                ", isInterviewerAvailable=" + isInterviewerAvailable +
-                ", canditatesId=" + allotedCanditates +
-                '}';
-    }
-
     public void showAllotedCanditates(){
-        for (Canditates c : allotedCanditates){
-            System.out.println(c.getCanditateId()+"  "+c.getCanditateScore() +" "+c.getCanditateName());
-        }
+            System.out.printf("%20s %20s %20s %20s","Canditate Id","Canditate Name ","Canditate EmailId","Interviwer Name");
+            System.out.println();
+            for(Canditates c : DataManagement.getInstance().getCanditatesList()){
+                System.out.format("%20s %20s %20s %20s",c.getCanditateId(),c.getCanditateName(),c.getCanditateEmailId(),c.getInterviewerName());
+                System.out.println();
+            }
     }
 }
