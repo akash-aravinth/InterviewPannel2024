@@ -13,7 +13,7 @@ public class LoginView {
         getLoginInfo();
     }
 
-    private void getLoginInfo() {
+    public void getLoginInfo() {
         System.out.println("Welcome To "+ InterviewPannel.getInstance().getAppName()
                 +" Version "+InterviewPannel.getInstance().getAppVersion());
         Scanner scanner = new Scanner(System.in);

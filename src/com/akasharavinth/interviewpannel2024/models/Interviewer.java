@@ -3,11 +3,12 @@ package com.akasharavinth.interviewpannel2024.models;
 import com.akasharavinth.interviewpannel2024.datalayer.DataManagement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Interviewer {
     private DataManagement dataManagement;
     private String interviewerName;
-    private int interviewerId;
+    private static int interviewerId;
     private String interviewerPassword;
     private String interviewerEmailId;
     private boolean isInterviewerAvailable;
@@ -49,15 +50,23 @@ public class Interviewer {
         return isInterviewerAvailable;
     }
 
+    public void insertIdNumber(int n){
+        canditatesId.add(n);
+    }
+    public ArrayList<Integer> getInsertCanditates(){
+        return canditatesId;
+    }
+
     public void setInterviewerAvailable(boolean interviewerAvailable) {
         isInterviewerAvailable = interviewerAvailable;
     }
 
-    public ArrayList<Integer> getCanditatesId() {
-        return canditatesId;
-    }
-
-    public void setCanditatesId(ArrayList<Integer> canditatesId) {
-        this.canditatesId = canditatesId;
-    }
+//    public ArrayList<Integer> getCanditatesId() {
+//        return canditatesId;
+//    }
+//
+//    public void setCanditatesId(ArrayList<Integer> canditatesId) {
+//        this.canditatesId = canditatesId;
+//    }
+//
 }

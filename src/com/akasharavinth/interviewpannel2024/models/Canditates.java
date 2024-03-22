@@ -17,6 +17,9 @@ public class Canditates {
     public void setCanditateName(String canditateName) {
         this.canditateName = canditateName;
     }
+    public int getCanditateId(){
+        return canditateId;
+    }
 
     public void setCanditateId(int canditateId) {
         this.canditateId = canditateId;

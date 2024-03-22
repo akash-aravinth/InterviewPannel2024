@@ -1,5 +1,8 @@
 package com.akasharavinth.interviewpannel2024.canditate;
 
+import com.akasharavinth.interviewpannel2024.interviewer.InterviewerView;
+import com.akasharavinth.interviewpannel2024.login.LoginView;
+
 import java.util.Scanner;
 
 public class CanditateView {
@@ -11,7 +14,7 @@ public class CanditateView {
        gettingChoice();
     }
 
-    private void gettingChoice() {
+    public void gettingChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1.add Canditate \n 2.add Interviewer \n 3.Interviewer Login" +
                 "\n 4.Logout \n 5.Exit ");
@@ -22,16 +25,21 @@ public class CanditateView {
                 break;
             }
             case 2 :{
-
+                InterviewerView interviewerView = new InterviewerView();
+                interviewerView.getInterviewerInfo();
                 break;
             }
             case 3 : {
+                LoginView loginView = new LoginView();
+                loginView.getLoginInfo();
                 break;
             }
             case 4 : {
+                System.out.println("Logout Succesfully");
                 break;
             }
             case 5 :{
+                System.out.println("ThankYou");
                 break;
             }
             default:{
@@ -46,11 +54,11 @@ public class CanditateView {
     }
     public void getCanditateInfo(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Your Name : ");
+        System.out.println("Enter Canditate Name : ");
         String canditateName = scanner.next();
         System.out.println("Enter Canditate Phone No :");
         long canditatePhoneNo = scanner.nextLong();
-        System.out.println("Enter Your EmailId : ");
+        System.out.println("Enter Canditate EmailId : ");
         String canditateEmailId = scanner.next();
         System.out.println("Enter Canditate Address : ");
         String canditateAddress = scanner.next();
