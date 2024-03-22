@@ -5,22 +5,24 @@ import com.akasharavinth.interviewpannel2024.login.LoginView;
 public class InterviewPannel {
     public static InterviewPannel interviewPannel;
 
-    public static InterviewPannel getInstance(){
-        if(interviewPannel == null)
+    public static InterviewPannel getInstance() {
+        if (interviewPannel == null)
             interviewPannel = new InterviewPannel();
         return interviewPannel;
     }
 
     private String appName = "InterViewPannel";
     private String appVersion = "0.0.1";
-    public String getAppName(){
+
+    public String getAppName() {
         return appName;
     }
-    public String getAppVersion(){
+
+    public String getAppVersion() {
         return appVersion;
     }
 
-    public void runProject(){
+    public void runProject() {
         LoginView loginView = new LoginView();
         loginView.init();
     }

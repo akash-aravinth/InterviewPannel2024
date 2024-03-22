@@ -3,12 +3,20 @@ package com.akasharavinth.interviewpannel2024.models;
 public class Canditates {
 
     private String canditateName;
-    private static int canditateId;
+    private static int id = 0;
+    private int canditateId;
     private long canditatePhoneNo;
     private String canditateEmailId;
     private String canditateAddress;
     private int canditateScore;
     private String interviewerName;
+
+    public int getId(){
+        return id;
+    }
+    public void setId(){
+        id++;
+    }
 
     public String getCanditateName() {
         return canditateName;
@@ -19,6 +27,10 @@ public class Canditates {
     }
     public int getCanditateId(){
         return canditateId;
+    }
+
+    public void incrementId(){
+        canditateId++;
     }
 
     public void setCanditateId(int canditateId) {
@@ -63,5 +75,17 @@ public class Canditates {
 
     public void setInterviewerName(String interviewerName) {
         this.interviewerName = interviewerName;
+    }
+
+    @Override
+    public String toString() {
+        return "Canditates{" +
+                "canditateName='" + canditateName + '\'' +
+                ", canditatePhoneNo=" + canditatePhoneNo +
+                ", canditateEmailId='" + canditateEmailId + '\'' +
+                ", canditateAddress='" + canditateAddress + '\'' +
+                ", canditateScore=" + canditateScore +
+                ", interviewerName='" + interviewerName + '\'' +
+                '}';
     }
 }

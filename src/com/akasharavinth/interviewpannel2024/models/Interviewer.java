@@ -3,19 +3,29 @@ package com.akasharavinth.interviewpannel2024.models;
 import com.akasharavinth.interviewpannel2024.datalayer.DataManagement;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Interviewer {
     private DataManagement dataManagement;
     private String interviewerName;
-    private static int interviewerId;
+    private static int id =0;
+    private int interviewerId;
     private String interviewerPassword;
     private String interviewerEmailId;
     private boolean isInterviewerAvailable;
-    private ArrayList<Integer> canditatesId;
+    private ArrayList<Canditates> allotedCanditates = new ArrayList<>();
 
     public String getInterviewerName() {
         return interviewerName;
+    }
+
+    public int getId(){
+        return id;
+    }
+    public void setId(){
+        id++;
+    }
+    public void incrementId(){
+        interviewerId++;
     }
 
     public void setInterviewerName(String interviewerName) {
@@ -50,23 +60,33 @@ public class Interviewer {
         return isInterviewerAvailable;
     }
 
-    public void insertIdNumber(int n){
-        canditatesId.add(n);
-    }
-    public ArrayList<Integer> getInsertCanditates(){
-        return canditatesId;
-    }
-
     public void setInterviewerAvailable(boolean interviewerAvailable) {
         isInterviewerAvailable = interviewerAvailable;
     }
 
-//    public ArrayList<Integer> getCanditatesId() {
-//        return canditatesId;
-//    }
-//
-//    public void setCanditatesId(ArrayList<Integer> canditatesId) {
-//        this.canditatesId = canditatesId;
-//    }
-//
+
+    public ArrayList<Canditates> getAllotedCanditates() {
+        return allotedCanditates;
+    }
+    public void setAllotedCanditates(Canditates c) {
+        allotedCanditates.add(c);
+    }
+
+    @Override
+    public String toString() {
+        return "Interviewer{" +
+                "dataManagement=" + dataManagement +
+                ", interviewerName='" + interviewerName + "\n" +
+                ", interviewerPassword='" + interviewerPassword + "\n" +
+                ", interviewerEmailId='" + interviewerEmailId + '\'' +
+                ", isInterviewerAvailable=" + isInterviewerAvailable +
+                ", canditatesId=" + allotedCanditates +
+                '}';
+    }
+
+    public void showAllotedCanditates(){
+        for (Canditates c : allotedCanditates){
+            System.out.println(c.getCanditateId()+"  "+c.getCanditateScore() +" "+c.getCanditateName());
+        }
+    }
 }
