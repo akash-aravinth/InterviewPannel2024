@@ -3,12 +3,14 @@ package com.akasharavinth.interviewpannel2024.datalayer;
 import com.akasharavinth.interviewpannel2024.models.Canditates;
 import com.akasharavinth.interviewpannel2024.models.Interviewer;
 
+import javax.xml.crypto.Data;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataManagement {
     public static DataManagement dataManagement;
+
 
     public static DataManagement getInstance() {
         if (dataManagement == null)
@@ -47,6 +49,10 @@ public class DataManagement {
         for (Interviewer i : interviewerList) {
             showInterviewer(i);
         }
+    }
+
+    public void show(){
+
     }
 
     //show single canditate and interviewer
