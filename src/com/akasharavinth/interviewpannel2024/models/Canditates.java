@@ -33,7 +33,7 @@ public class Canditates {
         canditateId++;
     }
 
-    public void setCanditateId(int canditateId) {
+    public void setCanditateId(int id) {
         this.canditateId = canditateId;
     }
 
@@ -77,15 +77,4 @@ public class Canditates {
         this.interviewerName = interviewerName;
     }
 
-    @Override
-    public String toString() {
-        return "Canditates{" +
-                "canditateName='" + canditateName + '\'' +
-                ", canditatePhoneNo=" + canditatePhoneNo +
-                ", canditateEmailId='" + canditateEmailId + '\'' +
-                ", canditateAddress='" + canditateAddress + '\'' +
-                ", canditateScore=" + canditateScore +
-                ", interviewerName='" + interviewerName + '\'' +
-                '}';
-    }
 }
