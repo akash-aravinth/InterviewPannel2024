@@ -13,7 +13,7 @@ public class AccessCanditates {
     public void takeEvaluation(Interviewer i) {
         List<Canditates> canditatesList = i.getAllotedCanditates();
         for (Canditates c : canditatesList){
-            System.out.println("How About The "+c.getInterviewerName()+" Performence and give a ratings within 10 ");
+            System.out.println("How About The "+c.getCanditateName()+" Performence and give a ratings within 10 ");
             int ratings = scanner.nextInt();
             if(ratings < 0 || ratings > 10){
                 System.out.println("Please Give Ratings Within 10");

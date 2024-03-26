@@ -18,16 +18,9 @@ public class Interviewer {
         return interviewerName;
     }
 
-    public int getId(){
-        return id;
-    }
     public void setId(){
-        id++;
+        this.interviewerId = id++;
     }
-    public void incrementId(){
-        interviewerId++;
-    }
-
     public void setInterviewerName(String interviewerName) {
         this.interviewerName = interviewerName;
     }

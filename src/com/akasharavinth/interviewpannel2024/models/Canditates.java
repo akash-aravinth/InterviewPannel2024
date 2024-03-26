@@ -11,11 +11,8 @@ public class Canditates {
     private int canditateScore;
     private String interviewerName;
 
-    public int getId(){
-        return id;
-    }
     public void setId(){
-        id++;
+        this.canditateId = id++;
     }
 
     public String getCanditateName() {
@@ -27,14 +24,6 @@ public class Canditates {
     }
     public int getCanditateId(){
         return canditateId;
-    }
-
-    public void incrementId(){
-        canditateId++;
-    }
-
-    public void setCanditateId(int id) {
-        this.canditateId = canditateId;
     }
 
     public long getCanditatePhoneNo() {

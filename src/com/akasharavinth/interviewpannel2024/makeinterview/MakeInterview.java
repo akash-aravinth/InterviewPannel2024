@@ -11,10 +11,6 @@ import java.util.List;
 public class MakeInterview {
     public void makeInterView(){
         DataManagement.getInstance().colideInterview();
-        DataManagement.getInstance().showCanditate(DataManagement.getInstance().getCanditatesList());
-        DataManagement.getInstance().showInterviwerList(DataManagement.getInstance().getInterviewerList());
-        Interviewer interviewer = new Interviewer();
-        interviewer.showAllotedCanditates();
         CanditateView canditateView = new CanditateView();
         canditateView.gettingChoice();
     }

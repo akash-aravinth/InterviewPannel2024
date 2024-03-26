@@ -18,8 +18,8 @@ public class CanditateView {
 
     public void gettingChoice() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.add Canditate \n 2.add Interviewer \n 3.Interviewer Login" +
-                "\n 4.Complete \n 5.Exit ");
+        System.out.println("1.add Canditate\n2.add Interviewer\n3.Interviewer Login\n" +
+                "4.Complete\n5.Exit\n ");
         int choice = scanner.nextInt();
         switch (choice){
             case 1 :{
@@ -37,6 +37,7 @@ public class CanditateView {
                 break;
             }
             case 4 : {
+                showAlert("Here The Selected Canditates : ");
                 AccessCanditates accessCanditates = new AccessCanditates();
                 accessCanditates.completeEvaluation();
                 break;

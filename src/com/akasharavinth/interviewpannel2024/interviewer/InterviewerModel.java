@@ -13,12 +13,11 @@ public class InterviewerModel {
 
     public void giveInterviewerInfo(String interviewerName, String password, String interviewerEmailId) {
         Interviewer interviewer = new Interviewer();
-        interviewer.setInterviewerId(interviewer.getId());
         interviewer.setInterviewerName(interviewerName);
         interviewer.setInterviewerPassword(password);
         interviewer.setInterviewerEmailId(interviewerEmailId);
         interviewer.setInterviewerAvailable(true);
-        DataManagement.getInstance().addInterviewer(interviewer);
         interviewer.setId();
+        DataManagement.getInstance().addInterviewer(interviewer);
     }
 }

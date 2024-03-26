@@ -1,7 +1,6 @@
 package com.akasharavinth.interviewpannel2024.interviewer;
 
-import com.akasharavinth.interviewpannel2024.canditate.CanditateView;
-import com.akasharavinth.interviewpannel2024.datalayer.DataManagement;
+
 import com.akasharavinth.interviewpannel2024.makeinterview.MakeInterview;
 
 import java.util.Scanner;

@@ -14,12 +14,11 @@ public class CanditateModel {
 
     public void giveCanditateInfo(String canditateName, long canditatePhoneNo, String canditateEmailId, String canditateAddress) {
         Canditates canditates = new Canditates();
-        canditates.setCanditateId(canditates.getId());
         canditates.setCanditateName(canditateName);
         canditates.setCanditatePhoneNo(canditatePhoneNo);
         canditates.setCanditateEmailId(canditateEmailId);
         canditates.setCanditateAddress(canditateAddress);
-        DataManagement.getInstance().addCanditate(canditates);
         canditates.setId();
+        DataManagement.getInstance().addCanditate(canditates);
     }
 }
