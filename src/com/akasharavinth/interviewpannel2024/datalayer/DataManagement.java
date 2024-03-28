@@ -2,14 +2,18 @@ package com.akasharavinth.interviewpannel2024.datalayer;
 
 import com.akasharavinth.interviewpannel2024.models.Canditates;
 import com.akasharavinth.interviewpannel2024.models.Interviewer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataManagement {
-    public static DataManagement dataManagement;
+public class DataManagement<T> {
 
+    ObjectMapper mapper = new ObjectMapper();
+    public final String path = "C:\\Users\\zsgs_w10_5\\IdeaProjects\\InterviewPannel\\src\\com\\akasharavinth\\interviewpannel2024\\datalayer";
+    public static DataManagement dataManagement;
 
     public static DataManagement getInstance() {
         if (dataManagement == null)
@@ -19,6 +23,11 @@ public class DataManagement {
 
     List<Canditates> canditatesList = new ArrayList<>();
     List<Interviewer> interviewerList = new ArrayList<>();
+
+    public void loadData(String path,List<T> list){
+        List<T> li = new ArrayList<>();
+
+    }
 
     public List<Canditates> getCanditatesList() {
         return canditatesList;
